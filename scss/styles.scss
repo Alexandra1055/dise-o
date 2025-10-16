@@ -1,33 +1,49 @@
-$color-principal: green;
+//Variables de Color
+$color-darkblue:darkblue;
+$color-gray:gray;
+$color-green: green;
+$color-blue:blue;
+$color-white:white;
+//Variables de medidas (tamaño letras)
+$size-1-medio:1.5rem;
+$size-1:1rem;
+$size-2:2rem;
+//Vairables de espacios (padding,gap)
+$padding-1-medio: 1.5rem;
+
+//Variables de grosores (width/border/...)
+$ancho-3ctpx:300px;
+$borde-1:1px;
+$width-completo:100%;
 
 .targeta-producte {
-    width: 300px;
-    border: 1px;
-    padding: 1.5rem;
+    width: $ancho-3ctpx;
+    border: $borde-1;
+    padding: $padding-1-medio;
 
     .titol {
-        color: darkblue;
-        font-size: 1.5rem;
+        color: $color-darkblue;
+        font-size: $size-1-medio;
     }
 
     .descripcio {
-        color: gray;
-        font-size: 1rem;
+        color: $color-gray;
+        font-size: $size-1;
     }
 
     .preu{
         font-weight: bold;
-        color: green;
-        font-size: 2rem;      
+        color: $color-green;
+        font-size: $size-2;      
     }
 
     .boto-compra{
-        background-color: blue;
-        color: white;
-        padding: 1rem 1.5rem;
+        background-color: $color-blue;
+        color: $color-white;
+        padding: $size-1 $size-1-medio;
 
         &:hover{
-            background-color: darkblue;
+            background-color: $color-blue;
         }
     }
 

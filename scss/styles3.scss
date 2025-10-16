@@ -1,0 +1,62 @@
+//Variables de Color
+$color-darkblue:darkblue;
+$color-gray:gray;
+$color-green: green;
+$color-darkgreen: darkgreen;
+$color-blue:blue;
+$color-white:white;
+$color-black:black;
+$color-darkkhaki:darkkhaki;
+
+//Variables de medidas (tamaño letras)
+$size-1-medio:1.5rem;
+$size-1:1rem;
+$size-2:2rem;
+//Vairables de espacios (padding,gap)
+$padding-1-medio: 1.5rem;
+
+//Variables de grosores (width/border/...)
+$ancho-3px:300px;
+$borde-1:1px;
+$borde-2:2px;
+$width-completo:100%;
+$width-36: 36rem;
+$width-33prc:33%;
+
+
+.galeria {
+    display: flex;
+    gap: $size-1;
+    padding: $size-2;
+    justify-content: center;
+
+    .galeria-item {
+        width: $width-33prc;
+
+        .imatge-container {
+            overflow: hidden;
+            box-shadow: 0 ($borde-2*2) ($borde-2*4) rgba(0, 0, 0, 0.1);
+
+            img {
+                width: $width-completo;
+                display: block;
+
+                &:hover {
+                    scale: 1.1;
+                }
+            }
+
+            &:hover {
+                box-shadow: 0 ($borde-2*4) ($borde-2*8) rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        .titol {
+            text-align: center;
+            margin-top: $size-1;
+            color: $color-darkkhaki;
+            font-size: ($borde-2*9);
+        }
+    }
+
+}

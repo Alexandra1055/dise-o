@@ -1,23 +1,43 @@
+//Variables de Color
+$color-green: green;
+$color-darkgreen: darkgreen;
+$color-blue:blue;
+$color-white:white;
+$color-black:black;
+//Variables de medidas (tamaño letras)
+$size-1-medio:1.5rem;
+$size-1:1rem;
+$size-2:2rem;
+//Vairables de espacios (padding,gap)
+$padding-1-medio: 1.5rem;
+
+//Variables de grosores (width/border/...)
+$ancho-3px:300px;
+$borde-1:1px;
+$borde-2:2px;
+$width-completo:100%;
+$width-36: 36rem;
+
 .formulari {
-    max-width: 36rem;
+    max-width: $width-36;
     margin: auto;
-    padding: 2rem;
+    padding: $size-2;
 
     .camp {
         label {
             font-size: bold;
-            margin-bottom: 1rem;
+            margin-bottom: $size-1;
         }
 
         input {
-            width: 100%;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            outline: 1px solid black;
-            font-size: 1rem;
+            width: $width-completo;
+            padding: $size-1;
+            margin-bottom: $size-1;
+            outline: $borde-1 solid $color-black;
+            font-size: $size-1;
 
             &:focus {
-                outline: 2px solid blue;
+                outline: $borde-2 solid $color-blue;
             }
         }
 
@@ -27,14 +47,14 @@
     }
 
     .boto-enviar {
-        padding: 1rem;
-        background-color: green;
-        font-size: 1rem;
-        width: 100%;
-        color: white;
+        padding: $size-1;
+        background-color: $color-green;
+        font-size: $size-1;
+        width: $width-completo;
+        color: $color-white;
 
         &:hover {
-            background-color: darkgreen;
+            background-color: $color-darkgreen;
         }
     }
 }

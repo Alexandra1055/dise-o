@@ -1,0 +1,49 @@
+@charset "UTF-8";
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+  padding: 0 2.5rem;
+  background-color: lightyellow;
+}
+.header .logo img {
+  width: 2.5rem;
+  display: block;
+}
+.header .navegacio {
+  display: flex;
+  gap: 0.3rem;
+}
+.header .navegacio .enllaç {
+  padding: 0.625rem 0.9375rem;
+  color: darkgrey;
+  text-decoration: none;
+  position: relative;
+}
+.header .navegacio .enllaç::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0.2rem;
+  width: 100%;
+  background: blue;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+.header .navegacio .enllaç:hover {
+  color: blue;
+}
+.header .navegacio .enllaç:hover::after {
+  transform: scaleX(1);
+}
+.header .navegacio .enllaç.actiu {
+  color: blue;
+  font-weight: bold;
+}
+.header .navegacio .enllaç.actiu::after {
+  transform: scaleX(1);
+}
+
+/*# sourceMappingURL=styles4.css.map */

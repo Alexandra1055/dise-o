@@ -1,0 +1,72 @@
+//Variables de Color
+$fondo-header: lightyellow;
+
+//Variables de medidas (tamaño letras)
+
+
+//Vairables de espacios (padding,gap)
+
+
+//Variables de grosores (widh/border/...)
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+    padding: 0 2.5rem;
+    background-color: $fondo-header;
+
+    .logo img {
+        width: 2.5rem;
+        display: block;
+    }
+
+    .navegacio {
+        display: flex;
+        gap: 0.3rem;
+
+        .enllaç {
+            padding: 0.625rem 0.9375rem;
+            color: darkgrey;
+            text-decoration: none;
+            position: relative;
+
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 0.2rem;
+                width: 100%;
+                background: blue;
+                transform: scaleX(0);
+                transition: transform 0.3s ease;
+
+
+
+            }
+
+            &:hover {
+                color: blue;
+
+                &::after {
+                    transform: scaleX(1);
+                }
+            }
+
+
+            &.actiu {
+                color: blue;
+                font-weight: bold;
+
+                &::after {
+                    transform: scaleX(1);
+                }
+            }
+
+
+        }
+    }
+}
