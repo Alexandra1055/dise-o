@@ -13,11 +13,11 @@
 }
 .header .navegacio {
   display: flex;
-  gap: 0.3rem;
+  gap: 3rem;
 }
 .header .navegacio .enllaç {
   padding: 0.625rem 0.9375rem;
-  color: darkgrey;
+  color: #333333;
   text-decoration: none;
   position: relative;
 }
@@ -28,9 +28,9 @@
   bottom: 0;
   height: 0.2rem;
   width: 100%;
-  background: blue;
+  background: lightyellow;
   transform: scaleX(0);
-  transition: transform 0.3s ease;
+  transition: transform 0.3 ease;
 }
 .header .navegacio .enllaç:hover {
   color: blue;

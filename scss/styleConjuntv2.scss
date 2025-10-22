@@ -1,0 +1,273 @@
+//Variables de Color
+$color-darkblue:darkblue;
+$color-lightgray:lightgray;
+$color-gray:gray;
+$color-darkgray:#333333;
+$color-lightgreen:lightgreen;
+$color-green: green;
+$color-darkgreen: darkgreen;
+$color-lightblue:lightblue;
+$color-blue:blue;
+$color-white:white;
+$color-black:black;
+$color-darkkhaki:darkkhaki;
+$color-lightyellow:lightyellow;
+
+//Variables de medidas (tamaño letras)
+$size-1-medio:1.5rem;
+$size-1:1rem;
+$size-2:2rem;
+$size-5:5rem;
+//Vairables de espacios (padding,gap)
+$padding-1-medio: 1.5rem;
+$padding-0625:0.625rem;
+$padding-09375:0.9375rem;
+
+//Variables de grosores (width/border/...)
+$ancho-3px:300px;
+$borde-1:1px;
+$borde-2:2px;
+$width-completo:100%;
+$width-36: 36rem;
+$width-15: 15rem;
+$width-33prc:33%;
+
+//Ex1: preu
+.targeta-producte {
+    width: $ancho-3px;
+    border: $borde-1;
+    padding: $padding-1-medio;
+
+    .titol {
+        color: $color-darkblue;
+        font-size: $size-1-medio;
+    }
+
+    .descripcio {
+        color: $color-gray;
+        font-size: $size-1;
+    }
+
+    .preu{
+        font-weight: bold;
+        color: $color-green;
+        font-size: $size-2;      
+    }
+
+    .boto-compra{
+        background-color: $color-blue;
+        color: $color-white;
+        padding: $size-1 $size-1-medio;
+
+        &:hover{
+            background-color: $color-blue;
+        }
+    }
+
+
+
+}
+
+//Ex.2 Formulario
+.formulari {
+    max-width: $width-36;
+    margin: auto;
+    padding: $size-2;
+
+    .camp {
+        label {
+            font-size: bold;
+            margin-bottom: $size-1;
+        }
+
+        input {
+            width: $width-completo;
+            padding: $size-1;
+            margin-bottom: $size-1;
+            outline: $borde-1 solid $color-black;
+            font-size: $size-1;
+
+            &:focus {
+                outline: $borde-2 solid $color-blue;
+            }
+        }
+
+        textarea {
+            field-sizing: content;
+        }
+    }
+
+    .boto-enviar {
+        padding: $size-1;
+        background-color: $color-green;
+        font-size: $size-1;
+        width: $width-completo;
+        color: $color-white;
+
+        &:hover {
+            background-color: $color-darkgreen;
+        }
+    }
+}
+
+//Ex.3 Images
+
+.galeria {
+    display: flex;
+    gap: $size-1;
+    padding: $size-2;
+    justify-content: center;
+
+    .galeria-item {
+        width: $width-33prc;
+
+        .imatge-container {
+            overflow: hidden;
+            box-shadow: 0 ($borde-2*2) ($borde-2*4) rgba(0, 0, 0, 0.1);
+
+            img {
+                width: $width-completo;
+                display: block;
+
+                &:hover {
+                    scale: 1.1;
+                }
+            }
+
+            &:hover {
+                box-shadow: 0 ($borde-2*4) ($borde-2*8) rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        .titol {
+            text-align: center;
+            margin-top: $size-1;
+            color: $color-darkkhaki;
+            font-size: ($borde-2*9);
+        }
+    }
+
+}
+
+//Ex.4 Menu
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: ($size-2*2);
+  padding: 0 (($size-1)+($size-1-medio));
+  background-color: $color-lightyellow;
+
+  .logo img {
+    width: ($size-1)+($size-1-medio);
+    display: block;
+  }
+
+  .navegacio {
+    display: flex;
+    gap:($width-15/5);
+
+    .enllaç {
+      padding: ($padding-0625) ($padding-09375);
+      color: $color-darkgray;
+      text-decoration: none;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: ($size-1/5);
+        width: $width-completo;
+        background: $color-lightyellow;
+        transform: scaleX(0);
+        transition: transform 0.3 ease;
+      }
+
+      &:hover {
+        color: $color-blue;
+
+        &::after {
+          transform: scaleX(1);
+        }
+      }
+
+      &.actiu {
+        color: $color-blue;
+        font-weight: bold;
+
+        &::after {
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+}
+
+//Ex.5 Tarjetas
+.equip {
+  display: flex;
+  gap: $size-1-medio;
+  padding: ($size-1)+($size-1-medio);
+  justify-content: center;
+  background: $color-lightgreen;
+
+  .membre-card {
+    width: ($width-36/2);
+    background: $color-lightblue;
+    border-radius: ($size-1/2);
+    padding:$size-1-medio;
+    text-align: center;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-0.5rem);
+    }
+
+    .avatar {
+      width: ($width-15/2);
+      height: ($width-15/2);
+      margin-bottom: $size-1;
+      border: ($size-1/4) solid $color-blue;
+      object-fit: cover;
+    }
+
+    .nom {
+      color: $color-darkgray;
+      font-size: $size-1-medio;
+      font-weight: 700;
+      margin-bottom: ($size-1/2);
+    }
+
+    .carrec {
+      color: $color-gray;
+      font-size: $size-1;
+      margin-bottom: $size-1;
+    }
+
+    .xarxes {
+      display: flex;
+      justify-content: center;
+      gap: ($size-1)-($size-1/4);
+
+      .xarxa-enllaç {
+        display: inline-block;
+        width: ($size-1-medio) + ($size-1);
+        height: ($size-1-medio) + ($size-1);
+        border-radius: ($width-completo/2);
+        background: $color-lightyellow;
+        color: $color-lightgray;
+        line-height: ($size-1-medio) + ($size-1);
+        text-decoration: none;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: $color-blue;
+          color: $color-white;
+        }
+      }
+    }
+  }
+}

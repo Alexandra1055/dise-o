@@ -1,72 +1,93 @@
+// Paleta rápida
+$verd-fluix: #e9f7ef;
+$blau-fluix: #e8f0ff;
+$groc-fluix: #fff7cc;
+$gris-clar: #9aa0a6;
+$blau: #1e90ff;
+$blanc: #ffffff;
 //Variables de Color
-$fondo-header: lightyellow;
+$color-darkblue:darkblue;
+$color-lightgray:lightgray;
+$color-gray:gray;
+$color-darkgray:#333333;
+$color-green: green;
+$color-darkgreen: darkgreen;
+$color-blue:blue;
+$color-white:white;
+$color-black:black;
+$color-darkkhaki:darkkhaki;
+$color-lightyellow:lightyellow;
 
 //Variables de medidas (tamaño letras)
-
-
+$size-1-medio:1.5rem;
+$size-1:1rem;
+$size-2:2rem;
+$size-5:5rem;
 //Vairables de espacios (padding,gap)
+$padding-1-medio: 1.5rem;
+$padding-0625:0.625rem;
+$padding-09375:0.9375rem;
 
-
-//Variables de grosores (widh/border/...)
+//Variables de grosores (width/border/...)
+$ancho-3px:300px;
+$borde-1:1px;
+$borde-2:2px;
+$width-completo:100%;
+$width-36: 36rem;
+$width-15: 15rem;
+$width-33prc:33%;
 
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: ($size-2*2);
+  padding: 0 (($size-1)+($size-1-medio));
+  background-color: $color-lightyellow;
+
+  .logo img {
+    width: ($size-1)+($size-1-medio);
+    display: block;
+  }
+
+  .navegacio {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 4rem;
-    padding: 0 2.5rem;
-    background-color: $fondo-header;
+    gap:($width-15/5);
 
-    .logo img {
-        width: 2.5rem;
-        display: block;
-    }
+    .enllaç {
+      padding: $padding-0625 $padding-09375;
+      color: $color-darkgray;
+      text-decoration: none;
+      position: relative;
 
-    .navegacio {
-        display: flex;
-        gap: 0.3rem;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: ($size-1/5);
+        width: $width-completo;
+        background: $color-lightyellow;
+        transform: scaleX(0);
+        transition: transform 0.3 ease;
+      }
 
-        .enllaç {
-            padding: 0.625rem 0.9375rem;
-            color: darkgrey;
-            text-decoration: none;
-            position: relative;
+      &:hover {
+        color: $color-blue;
 
-
-            &::after {
-                content: "";
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                height: 0.2rem;
-                width: 100%;
-                background: blue;
-                transform: scaleX(0);
-                transition: transform 0.3s ease;
-
-
-
-            }
-
-            &:hover {
-                color: blue;
-
-                &::after {
-                    transform: scaleX(1);
-                }
-            }
-
-
-            &.actiu {
-                color: blue;
-                font-weight: bold;
-
-                &::after {
-                    transform: scaleX(1);
-                }
-            }
-
-
+        &::after {
+          transform: scaleX(1);
         }
+      }
+
+      &.actiu {
+        color: $color-blue;
+        font-weight: bold;
+
+        &::after {
+          transform: scaleX(1);
+        }
+      }
     }
+  }
 }

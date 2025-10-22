@@ -1,0 +1,105 @@
+// Paleta rápida
+$verd-fluix: #e9f7ef;
+$blau-fluix: #e8f0ff;
+$groc-fluix: #fff7cc;
+$gris-clar: #9aa0a6;
+$blau: #1e90ff;
+$blanc: #ffffff;
+//Variables de Color
+$color-darkblue:darkblue;
+$color-lightgray:lightgray;
+$color-gray:gray;
+$color-darkgray:#333333;
+$color-lightgreen:lightgreen;
+$color-green: green;
+$color-darkgreen: darkgreen;
+$color-lightblue:lightblue;
+$color-blue:blue;
+$color-white:white;
+$color-black:black;
+$color-darkkhaki:darkkhaki;
+$color-lightyellow:lightyellow;
+
+//Variables de medidas (tamaño letras)
+$size-1-medio:1.5rem;
+$size-1:1rem;
+$size-2:2rem;
+$size-5:5rem;
+//Vairables de espacios (padding,gap)
+$padding-1-medio: 1.5rem;
+$padding-0625:0.625rem;
+$padding-09375:0.9375rem;
+//Variables de grosores (width/border/...)
+$ancho-3px:300px;
+$borde-1:1px;
+$borde-2:2px;
+$width-completo:100%;
+$width-36: 36rem;
+$width-15: 15rem;
+$width-33prc:33%;
+
+
+.equip {
+  display: flex;
+  gap: $size-1-medio;
+  padding: ($size-1)+($size-1-medio);
+  justify-content: center;
+  background: $verd-fluix;
+
+  .membre-card {
+    width: ($width-36/2);
+    background: $blau-fluix;
+    border-radius: ($size-1/2);
+    padding:$size-1-medio;
+    text-align: center;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-0.5rem);
+    }
+
+    .avatar {
+      width: ($width-15/2);
+      height: ($width-15/2);
+      margin-bottom: $size-1;
+      border: ($size-1/4) solid $blau;
+      object-fit: cover;
+    }
+
+    .nom {
+      color: $color-darkgray;
+      font-size: $size-1-medio;
+      font-weight: 700;
+      margin-bottom: ($size-1/2);
+    }
+
+    .carrec {
+      color: $color-gray;
+      font-size: $size-1;
+      margin-bottom: $size-1;
+    }
+
+    .xarxes {
+      display: flex;
+      justify-content: center;
+      gap: ($size-1)-($size-1/4);
+
+      .xarxa-enllaç {
+        display: inline-block;
+        width: ($size-1-medio) + ($size-1);
+        height: ($size-1-medio) + ($size-1);
+        border-radius: ($width-completo/2);
+        background: $color-lightyellow;
+        color: $color-lightgray;
+        line-height: ($size-1-medio) + ($size-1);
+        text-decoration: none;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: $color-blue;
+          color: $color-white;
+        }
+      }
+    }
+  }
+}
