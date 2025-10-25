@@ -1,66 +1,78 @@
-//Variables de Color
-$color-darkblue:darkblue;
-$color-lightgray:lightgray;
-$color-gray:gray;
-$color-darkgray:#333333;
-$color-lightgreen:lightgreen;
-$color-green: green;
-$color-darkgreen: darkgreen;
-$color-lightblue:lightblue;
-$color-blue:blue;
+//Variables de Colores Principales
+$color-primary: #2563eb;        // Blau clar
+$color-primary-dark: #1e40af;   // Blau fosc
+$color-secondary: #10b981;      // Verd clar
+$color-secondary-dark: #059669;
+$color-background: darkkhaki;
+//colores basicos
 $color-white:white;
 $color-black:black;
-$color-darkkhaki:darkkhaki;
-$color-lightyellow:lightyellow;
 
 //Variables de medidas (tamaño letras)
-$size-1-medio:1.5rem;
-$size-1:1rem;
-$size-2:2rem;
-$size-5:5rem;
-//Vairables de espacios (padding,gap)
-$padding-1-medio: 1.5rem;
-$padding-0625:0.625rem;
-$padding-09375:0.9375rem;
+$base-size:1rem;
+$font-size-small:0.875rem;
+$font-size-base: 1rem;
+$font-size-medium: 1.125rem;
+$font-size-large: 1.5rem;
+$font-size-xlarge:2rem;
+$font-bold: bold;
+
+
+//Vairables de espacios (padding y marges)
+$space-small: 0.5rem;
+$space-medium: 1rem;
+$space-large: 1.5rem;
+$space-xlarge: 2rem;
 
 //Variables de grosores (width/border/...)
-$ancho-3px:300px;
-$borde-1:1px;
-$borde-2:2px;
-$width-completo:100%;
-$width-36: 36rem;
-$width-15: 15rem;
-$width-33prc:33%;
+$width-base:100px;
+$border-style: solid;
+$border-width-1: 1px;
+$border-width-2: 2px;
+$radius-sm: 0.25rem;
+$radius-md: 0.5rem;
+$radius-lg: 1rem;
+
+//Variables de Sombras
+$shadow-sm:    0 2px 4px rgba(0,0,0,.08);
+$shadow-base:  0 4px 8px rgba(0,0,0,.10);
+$shadow-md:    0 8px 16px rgba(0,0,0,.12);
+$shadow-lg:    0 12px 24px rgba(0,0,0,.16);
+$shadow-hover: 0 16px 32px rgba(0,0,0,.20);
+
+//Variables de transicion
+$transition-base:0.3s;
+$transition-fast:0.2s;
 
 //Ex1: preu
 .targeta-producte {
-    width: $ancho-3px;
-    border: $borde-1;
-    padding: $padding-1-medio;
+    width: ($width-base*3);
+    border: $border-width-1;
+    padding: $space-large;
 
     .titol {
-        color: $color-darkblue;
-        font-size: $size-1-medio;
+        color: $color-primary-dark;
+        font-size: $font-size-large;
     }
 
     .descripcio {
-        color: $color-gray;
-        font-size: $size-1;
+        color: $color-black;
+        font-size: $font-size-base;
     }
 
     .preu{
-        font-weight: bold;
-        color: $color-green;
-        font-size: $size-2;      
+        font-weight: $font-bold;
+        color: $color-secondary;
+        font-size: $font-size-xlarge;      
     }
 
     .boto-compra{
-        background-color: $color-blue;
+        background-color: $color-primary;
         color: $color-white;
-        padding: $size-1 $size-1-medio;
+        padding: $space-medium $space-large;
 
         &:hover{
-            background-color: $color-blue;
+            background-color: $color-primary;
         }
     }
 
@@ -70,25 +82,25 @@ $width-33prc:33%;
 
 //Ex.2 Formulario
 .formulari {
-    max-width: $width-36;
+    max-width: ($space-xlarge*18);
     margin: auto;
-    padding: $size-2;
+    padding: $space-xlarge;
 
     .camp {
         label {
-            font-size: bold;
-            margin-bottom: $size-1;
+            font-size: $font-bold;
+            margin-bottom: $space-medium;
         }
 
         input {
-            width: $width-completo;
-            padding: $size-1;
-            margin-bottom: $size-1;
-            outline: $borde-1 solid $color-black;
-            font-size: $size-1;
+            width: 100%;
+            padding: $space-medium;
+            margin-bottom: $space-medium;
+            outline: $border-width-1 $border-style $color-black;
+            font-size: $font-size-base;
 
             &:focus {
-                outline: $borde-2 solid $color-blue;
+                outline: $border-width-2 $border-style $color-primary;
             }
         }
 
@@ -98,14 +110,14 @@ $width-33prc:33%;
     }
 
     .boto-enviar {
-        padding: $size-1;
-        background-color: $color-green;
-        font-size: $size-1;
+        padding: $space-medium;
+        background-color: $color-secondary;
+        font-size: $font-size-base;
         width: $width-completo;
         color: $color-white;
 
         &:hover {
-            background-color: $color-darkgreen;
+            background-color: $color-secondary-dark;
         }
     }
 }
@@ -114,12 +126,12 @@ $width-33prc:33%;
 
 .galeria {
     display: flex;
-    gap: $size-1;
-    padding: $size-2;
+    gap: $space-medium;
+    padding: $space-xlarge;
     justify-content: center;
 
     .galeria-item {
-        width: $width-33prc;
+        width: 33%;
 
         .imatge-container {
             overflow: hidden;
@@ -187,7 +199,7 @@ $width-33prc:33%;
       }
 
       &:hover {
-        color: $color-blue;
+        color: $color-primary;
 
         &::after {
           transform: scaleX(1);
@@ -195,7 +207,7 @@ $width-33prc:33%;
       }
 
       &.actiu {
-        color: $color-blue;
+        color: $color-primary;
         font-weight: bold;
 
         &::after {
@@ -212,11 +224,11 @@ $width-33prc:33%;
   gap: $size-1-medio;
   padding: ($size-1)+($size-1-medio);
   justify-content: center;
-  background: $color-lightgreen;
+  background: $color-secondary;
 
   .membre-card {
     width: ($width-36/2);
-    background: $color-lightblue;
+    background: $color-primary;
     border-radius: ($size-1/2);
     padding:$size-1-medio;
     text-align: center;
@@ -230,7 +242,7 @@ $width-33prc:33%;
       width: ($width-15/2);
       height: ($width-15/2);
       margin-bottom: $size-1;
-      border: ($size-1/4) solid $color-blue;
+      border: ($size-1/4) solid $color-primary;
       object-fit: cover;
     }
 
@@ -264,7 +276,7 @@ $width-33prc:33%;
         transition: all 0.3s ease;
 
         &:hover {
-          background: $color-blue;
+          background: $color-primary;
           color: $color-white;
         }
       }
